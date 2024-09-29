@@ -35,11 +35,11 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <div class="max-w-7xl px-4 md:px-8 mx-auto">
-            <Header />
+        <Header />
+        <main class="min-h-[calc(100dvh)] max-w-7xl px-4 md:px-8 mx-auto">
             <slot />
-            <Footer />
-        </div>
+        </main>
+        <Footer />
 
         <!-- Preline modules -->
         <script>
