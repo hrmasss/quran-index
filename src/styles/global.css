@@ -5,10 +5,10 @@
 @layer base {
     :root {
         --foreground: 0 0% 98%;
-        --background: 240 73% 5%;
+        --background: 240 55% 5%;
 
-        --card: 240 73% 7%;
-        --border: 240 73% 20%;
+        --card: 240 55% 10%;
+        --border: 240 55% 15%;
 
         --primary: 76 77% 63%;
         --accent: 140 68% 74%;
