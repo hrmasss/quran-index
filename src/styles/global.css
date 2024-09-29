@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --foreground: 0 0% 98%;
+        --background: 240 73% 5%;
+
+        --card: 240 73% 7%;
+        --border: 240 73% 20%;
+
+        --primary: 76 77% 63%;
+        --accent: 140 68% 74%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply font-sans bg-background text-foreground antialiased;
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-full bg-foreground/20 transition duration-150 hover:bg-foreground/40;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-card;
+    }
+}

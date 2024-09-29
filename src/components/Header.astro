@@ -1,0 +1,87 @@
+<header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
+    <nav
+        class="relative w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center">
+        <div class="md:col-span-3">
+            <!-- Branding -->
+            <a
+                class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+                href="/"
+                aria-label="Quran Index">
+                <span class="text-xl font-bold">QuranIndex</span>
+            </a>
+            <!-- End Branding -->
+        </div>
+
+        <!-- Button Group -->
+        <div
+            class="flex items-center gap-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3">
+            <a
+                href="/"
+                class="block py-2 px-4 items-center gap-x-2 text-sm font-bold rounded-xl border border-transparent bg-primary text-black hover:bg-primary/80 focus:outline-none focus:bg-primary/80 transition disabled:opacity-50 disabled:pointer-events-none">
+                BLOG
+            </a>
+
+            <div class="md:hidden">
+                <button
+                    type="button"
+                    class="hs-collapse-toggle size-[38px] flex justify-center items-center text-sm font-semibold rounded-xl hover:bg-primary/5 focus:outline-none focus:bg-primary/5 disabled:opacity-50 disabled:pointer-events-none border border-primary"
+                    id="hs-navbar-hcail-collapse"
+                    aria-expanded="false"
+                    aria-controls="hs-navbar-hcail"
+                    aria-label="Toggle navigation"
+                    data-hs-collapse="#hs-navbar-hcail">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="hs-collapse-open:hidden shrink-0 size-5">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        ></path>
+                    </svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="hs-collapse-open:block hidden shrink-0 size-5">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18 18 6M6 6l12 12"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- End Button Group -->
+
+        <!-- Collapse -->
+        <div
+            id="hs-navbar-hcail"
+            class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6"
+            aria-labelledby="hs-navbar-hcail-collapse">
+            <div
+                class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
+                {
+                    Array.from([1, 2, 3], (x) => `Language ${x}`).map(
+                        (lang, idx) => (
+                            <div>
+                                <a
+                                    class={`inline-block hover:text-primary focus:outline-none focus:text-primary ${!idx ? "text-primary" : ""}`}
+                                    href="#">
+                                    {lang}
+                                </a>
+                            </div>
+                        )
+                    )
+                }
+            </div>
+        </div>
+    </nav>
+</header>
