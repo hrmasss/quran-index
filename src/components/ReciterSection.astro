@@ -1,0 +1,50 @@
+---
+import ReciterCard from "@/components/ReciterCard.astro";
+
+const alphabets = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode(65 + i)
+);
+---
+
+<div class="flex flex-wrap py-4 md:py-6">
+    <div class="border-e">
+        <nav
+            class="flex flex-col space-y-2"
+            aria-label="Tabs"
+            role="tablist"
+            aria-orientation="horizontal">
+            {
+                alphabets.map((letter, index) => (
+                    <button
+                        type="button"
+                        class={`hs-tab-active:border-primary hs-tab-active:font-bold hs-tab-active:text-primary py-1 pe-2 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-foreground/60 hover:text-primary focus:outline-none focus:text-primary disabled:opacity-50 disabled:pointer-events-none ${!index ? "active" : ""}`}
+                        id={`reciter-tab-${letter}`}
+                        aria-selected={!index ? "true" : "false"}
+                        data-hs-tab={`#reciter-group-${letter}`}
+                        aria-controls={`reciter-group-${letter}`}
+                        role="tab">
+                        {letter}
+                    </button>
+                ))
+            }
+        </nav>
+    </div>
+
+    <div class="ms-3 grow">
+        {
+            alphabets.map((letter, index) => (
+                <div
+                    id={`reciter-group-${letter}`}
+                    class={!index ? "" : "hidden"}
+                    role="tabpanel"
+                    aria-labelledby={`reciter-tab-${letter}`}>
+                    <div class="grid gap-3 lg:gap-6 py-2 px-1">
+                        {Array.from([1, 2, 3, 4, 5]).map((idx) => (
+                            <ReciterCard />
+                        ))}
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
