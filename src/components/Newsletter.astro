@@ -1,0 +1,62 @@
+<form>
+    <div
+        class="p-1.5 flex flex-col sm:flex-row items-center gap-2 border rounded-lg">
+        <div class="relative w-full">
+            <label
+                for="newsletter-email"
+                class="sr-only"
+                >Subscribe
+            </label>
+            <div
+                class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3">
+                <svg
+                    class="shrink-0 size-4 text-foreground/60"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><rect
+                        width="20"
+                        height="16"
+                        x="2"
+                        y="4"
+                        rx="2"
+                    ></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                    ></path>
+                </svg>
+            </div>
+            <input
+                type="email"
+                id="newsletter-email"
+                name="newsletter-email"
+                class="py-2 ps-9 pe-3 block w-full border-transparent rounded-lg text-sm focus:border-transparent focus:ring-transparent disabled:opacity-50 disabled:pointer-events-none px-3 bg-background border-2 focus:outline-none"
+                placeholder="Enter your email"
+            />
+        </div>
+        <a
+            class="w-full sm:w-auto whitespace-nowrap py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border bg-card hover:bg-primary focus:outline-none focus:bg-primary transition hover:text-background disabled:opacity-50 disabled:pointer-events-none"
+            href="#">
+            Join
+            <svg
+                class="shrink-0 size-3.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+            >
+        </a>
+    </div>
+    <p class="mt-2 text-xs text-foreground/60">
+        Subscribe to our newsletter to get latest news & updates. No spam,
+        unsubscribe at any time.
+    </p>
+</form>
