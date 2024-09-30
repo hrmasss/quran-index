@@ -1,3 +1,7 @@
+---
+import FeedbackForm from "./FeedbackForm.astro";
+---
+
 <footer class="relative overflow-hidden">
     <svg
         class="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
@@ -89,7 +93,12 @@
     </svg>
 
     <div class="relative z-10">
-        <div class="w-full max-w-7xl px-4 md:px-8 py-10 md:pt-16 mx-auto">
+        <div
+            class="w-full max-w-7xl px-4 md:px-8 py-10 md:pt-16 mx-auto flex flex-col">
+            <div class="flex">
+                <FeedbackForm />
+            </div>
+
             <div class="inline-flex items-center">
                 <!-- Branding -->
                 <a
@@ -101,9 +110,7 @@
                 <!-- End Branding -->
 
                 <div class="border-s border-primary ps-5 ms-5">
-                    <p class="text-sm text-foreground/60">
-                        © Quran Index.
-                    </p>
+                    <p class="text-sm text-foreground/60">© Quran Index.</p>
                 </div>
             </div>
         </div>
