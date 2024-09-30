@@ -1,5 +1,6 @@
 ---
-import FeedbackForm from "./FeedbackForm.astro";
+import FeedbackForm from "@/components/FeedbackForm.astro";
+import SocialCard from "@/components/SocialCard.astro";
 ---
 
 <footer class="relative overflow-hidden">
@@ -95,8 +96,12 @@ import FeedbackForm from "./FeedbackForm.astro";
     <div class="relative z-10">
         <div
             class="w-full max-w-7xl px-4 md:px-8 py-10 md:pt-16 mx-auto flex flex-col">
-            <div class="flex">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 my-10 lg:my-14 gap-6 lg:gap-12">
                 <FeedbackForm />
+                <div class="flex flex-col gap-6 lg:gap-8">
+                    <SocialCard />
+                    <SocialCard />
+                </div>
             </div>
 
             <div class="inline-flex items-center">
