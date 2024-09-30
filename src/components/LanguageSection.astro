@@ -1,8 +1,20 @@
 ---
 import LanguageCard from "@/components/LanguageCard.astro";
-const alphabets = Array.from({ length: 26 }, (_, i) =>
-    String.fromCharCode(65 + i)
+import { languages, type Language } from "@/data/languages";
+
+const groupedLanguages: Record<string, Language[]> = languages.reduce(
+    (acc, language) => {
+        const firstLetter = language.name.charAt(0).toUpperCase();
+        if (!acc[firstLetter]) {
+            acc[firstLetter] = [];
+        }
+        acc[firstLetter].push(language);
+        return acc;
+    },
+    {} as Record<string, Language[]>
 );
+
+const alphabets: string[] = Object.keys(groupedLanguages).sort();
 ---
 
 <div class="py-4 md:py-6">
@@ -35,8 +47,8 @@ const alphabets = Array.from({ length: 26 }, (_, i) =>
                     role="tabpanel"
                     aria-labelledby={`language-tab-${letter}`}>
                     <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 lg:gap-6 py-2">
-                        {Array.from([1, 2, 3, 4, 5]).map((idx) => (
-                            <LanguageCard />
+                        {groupedLanguages[letter].map((language) => (
+                            <LanguageCard language={language} />
                         ))}
                     </div>
                 </div>

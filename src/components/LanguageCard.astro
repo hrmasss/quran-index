@@ -1,3 +1,13 @@
+---
+import type { Language } from "@/data/languages";
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props as Props;
+---
+
 <a
     class="group flex flex-col bg-card border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition hover:ring-1 focus:ring-1 ring-border"
     href="/">
@@ -6,14 +16,14 @@
             <div class="grow">
                 <div class="flex items-center gap-x-3">
                     <img
-                        class="size-10 rounded-full border"
-                        src="https://cdn-icons-png.flaticon.com/512/3015/3015772.png"
-                        alt="Flag"
+                        class="size-10 rounded-full border object-cover object-center"
+                        src={language.flag}
+                        alt={`${language.name} Flag`}
+                        loading="lazy"
                     />
                     <div class="grow">
-                        <h3
-                            class="group-hover:text-primary font-semibold">
-                            Bangla
+                        <h3 class="group-hover:text-primary font-semibold">
+                            {language.name}
                         </h3>
                     </div>
                 </div>
