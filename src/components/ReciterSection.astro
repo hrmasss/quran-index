@@ -1,9 +1,20 @@
 ---
 import ReciterCard from "@/components/ReciterCard.astro";
+import { reciters } from "@/data/reciters";
 
-const alphabets = Array.from({ length: 26 }, (_, i) =>
-    String.fromCharCode(65 + i)
+const groupedReciters: Record<string, typeof reciters> = reciters.reduce(
+    (acc, reciter) => {
+        const firstLetter = reciter.name.charAt(0).toUpperCase();
+        if (!acc[firstLetter]) {
+            acc[firstLetter] = [];
+        }
+        acc[firstLetter].push(reciter);
+        return acc;
+    },
+    {} as Record<string, typeof reciters>
 );
+
+const alphabets: string[] = Object.keys(groupedReciters).sort();
 ---
 
 <div class="flex flex-wrap py-4 md:py-6">
@@ -30,7 +41,7 @@ const alphabets = Array.from({ length: 26 }, (_, i) =>
         </nav>
     </div>
 
-    <div class="ms-3 grow">
+    <div class="ms-3 grow max-h-[750px] overflow-auto">
         {
             alphabets.map((letter, index) => (
                 <div
@@ -39,8 +50,8 @@ const alphabets = Array.from({ length: 26 }, (_, i) =>
                     role="tabpanel"
                     aria-labelledby={`reciter-tab-${letter}`}>
                     <div class="grid gap-3 lg:gap-6 py-2 px-1">
-                        {Array.from([1, 2, 3, 4, 5]).map((idx) => (
-                            <ReciterCard />
+                        {groupedReciters[letter].map((reciter) => (
+                            <ReciterCard reciter={reciter} />
                         ))}
                     </div>
                 </div>
