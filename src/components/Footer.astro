@@ -98,10 +98,119 @@ import SocialCard from "@/components/SocialCard.astro";
             class="w-full max-w-7xl px-4 md:px-8 py-10 md:pt-16 mx-auto flex flex-col">
             <div
                 class="grid sm:grid-cols-2 lg:grid-cols-3 my-10 lg:my-14 gap-6 lg:gap-12">
-                <FeedbackForm />
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <FeedbackForm />
+                </div>
+
                 <div class="flex flex-col gap-6 lg:gap-8">
                     <SocialCard />
                     <SocialCard />
+                </div>
+
+                <div
+                    class="p-4 relative z-10 bg-gradient-to-b from-card to-background/60 border rounded-xl md:p-8 w-full flex flex-col justify-between">
+                    <h3 class="text-lg sm:text-xl font-bold">Get the app</h3>
+
+                    <a
+                        href="/"
+                        class="group bg-card flex items-center justify-center hover:bg-card/80 w-full aspect-[3/1] transition focus:outline-none rounded-lg border hover:shadow-md hover:shadow-card">
+                        <div class="inline-flex py-3 px-5 items-center">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="size-8 stroke-2 group-hover:text-primary"
+                                ><path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                ></path><path
+                                    d="M4 3.71v16.58a.7 .7 0 0 0 1.05 .606l14.622 -8.42a.55 .55 0 0 0 0 -.953l-14.622 -8.419a.7 .7 0 0 0 -1.05 .607z"
+                                ></path><path d="M15 9l-10.5 11.5"></path><path
+                                    d="M4.5 3.5l10.5 11.5"></path>
+                            </svg>
+                            <span
+                                class="ml-4 flex items-start flex-col leading-none">
+                                <span
+                                    class="text-xs text-foreground/60 uppercase group-hover:text-primary/60"
+                                    >Get it on</span
+                                >
+                                <span class="font-medium text-lg group-hover:text-primary"
+                                    >Google Play</span
+                                >
+                            </span>
+                        </div>
+                    </a>
+                    <a
+                        href="/"
+                        class="group bg-card flex items-center justify-center hover:bg-card/80 w-full aspect-[3/1] transition focus:outline-none rounded-lg border hover:shadow-md hover:shadow-card">
+                        <div class="inline-flex py-3 px-5 items-center">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="size-8 stroke-2 group-hover:text-primary"
+                                ><path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                ></path><path
+                                    d="M8.286 7.008c-3.216 0 -4.286 3.23 -4.286 5.92c0 3.229 2.143 8.072 4.286 8.072c1.165 -.05 1.799 -.538 3.214 -.538c1.406 0 1.607 .538 3.214 .538s4.286 -3.229 4.286 -5.381c-.03 -.011 -2.649 -.434 -2.679 -3.23c-.02 -2.335 2.589 -3.179 2.679 -3.228c-1.096 -1.606 -3.162 -2.113 -3.75 -2.153c-1.535 -.12 -3.032 1.077 -3.75 1.077c-.729 0 -2.036 -1.077 -3.214 -1.077z"
+                                ></path><path
+                                    d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2"
+                                ></path>
+                            </svg>
+                            <span
+                                class="ml-4 flex items-start flex-col leading-none">
+                                <span
+                                    class="text-xs text-foreground/60 uppercase group-hover:text-primary/60"
+                                    >Download on the</span
+                                >
+                                <span class="font-medium text-lg group-hover:text-primary"
+                                    >App Store</span
+                                >
+                            </span>
+                        </div>
+                    </a>
+                    <a
+                        href="/"
+                        class="group bg-card flex items-center justify-center hover:bg-card/80 w-full aspect-[3/1] transition focus:outline-none rounded-lg border hover:shadow-md hover:shadow-card">
+                        <div class="inline-flex py-3 px-5 items-center">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="size-8 stroke-2 group-hover:text-primary"
+                                ><path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                ></path><path
+                                    d="M17.8 20l-12 -1.5c-1 -.1 -1.8 -.9 -1.8 -1.9v-9.2c0 -1 .8 -1.8 1.8 -1.9l12 -1.5c1.2 -.1 2.2 .8 2.2 1.9v12.1c0 1.2 -1.1 2.1 -2.2 1.9z"
+                                ></path><path d="M12 5l0 14"></path><path
+                                    d="M4 12l16 0"></path>
+                            </svg>
+                            <span
+                                class="ml-4 flex items-start flex-col leading-none">
+                                <span
+                                    class="text-xs text-foreground/60 uppercase group-hover:text-primary/60"
+                                    >Get it from</span
+                                >
+                                <span class="font-medium text-lg group-hover:text-primary"
+                                    >Microsoft</span
+                                >
+                            </span>
+                        </div>
+                    </a>
                 </div>
             </div>
 
