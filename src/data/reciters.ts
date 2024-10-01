@@ -5,7 +5,7 @@ export interface Reciter {
 }
 
 const placeholderImageUrl =
-    "/images/reciters.avif";
+    "images/reciters.avif";
 
 export const reciters: Reciter[] = [
     { id: "1", name: "Abdullah Al-Matroud", imageUrl: placeholderImageUrl },
