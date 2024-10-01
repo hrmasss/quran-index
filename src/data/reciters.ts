@@ -5,7 +5,7 @@ export interface Reciter {
 }
 
 const placeholderImageUrl =
-    "https://images.unsplash.com/photo-1607596798924-ae8a3d31090b?q=80";
+    "/images/reciters.avif";
 
 export const reciters: Reciter[] = [
     { id: "1", name: "Abdullah Al-Matroud", imageUrl: placeholderImageUrl },
