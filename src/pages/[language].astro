@@ -1,13 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import SurahTable from "@/components/SurahTable.astro";
+import { languages } from "@/data/languages";
 
 export function getStaticPaths() {
-    return [
-        { params: { language: "Arabic" } },
-        { params: { language: "Bengali" } },
-        { params: { language: "English" } },
-    ];
+    return languages.map((language) => ({
+        params: { language: language.name },
+    }));
 }
 
 const { language } = Astro.params;
