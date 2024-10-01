@@ -28,24 +28,24 @@ const tableHeaders = ["Number", "Surah Name", "Download", "Listen & Read"];
                         {
                             surahs.map((surah) => (
                                 <tr class="hover:bg-card">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm">
                                         {surah.number}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         {surah.name}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm">
                                         <a
                                             href="/"
-                                            class="text-primary hover:text-primary">
+                                            class="py-1 px-3 inline-flex justify-center items-center text-sm font-bold transition rounded-lg border hover:bg-primary/80 focus:outline-none bg-card focus:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none text-primary hover:text-background">
                                             Download
                                         </a>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                         <a
                                             href="/"
-                                            class="text-primary hover:text-primary">
-                                            Listen & Read
+                                            class="py-1 px-3 inline-flex justify-center items-center text-sm font-bold transition rounded-lg border border-transparent bg-primary hover:bg-primary/80 focus:outline-none focus:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none text-background">
+                                            Play Online
                                         </a>
                                     </td>
                                 </tr>
