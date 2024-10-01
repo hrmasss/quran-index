@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SurahTable from "@/components/SurahTable.astro";
+
+export function getStaticPaths() {
+    return [
+        { params: { language: "Arabic" } },
+        { params: { language: "Bengali" } },
+        { params: { language: "English" } },
+    ];
+}
+
+const { language } = Astro.params;
+---
+
+<Layout title={`Quran in ${language}`}>
+    <div class="space-y-4 md:space-y-12">
+        <SurahTable />
+    </div>
+</Layout>

@@ -1,0 +1,58 @@
+---
+import { surahs } from "@/data/surahs";
+
+const tableHeaders = ["Number", "Surah Name", "Download", "Listen & Read"];
+---
+
+<div
+    class="flex flex-col bg-card bg-gradient-to-br from-card/40 to-background border rounded-xl p-4 md:p-8">
+    <div class="-m-1.5 overflow-auto max-h-[650px]">
+        <div class="p-1.5 min-w-full inline-block align-middle">
+            <div class="overflow-hidden">
+                <table class="min-w-full divide-y divide-border">
+                    <thead>
+                        <tr>
+                            {
+                                tableHeaders.map((label, index) => (
+                                    <th
+                                        scope="col"
+                                        class={`px-6 py-3 text-xs font-medium text-foreground/60 uppercase text-nowrap ${index === tableHeaders.length - 1 ? "text-end" : "text-start"}`}>
+                                        {label}
+                                    </th>
+                                ))
+                            }
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border">
+                        {
+                            surahs.map((surah) => (
+                                <tr class="hover:bg-card">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        {surah.number}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                        {surah.name}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                        <a
+                                            href="/"
+                                            class="text-primary hover:text-primary">
+                                            Download
+                                        </a>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                        <a
+                                            href="/"
+                                            class="text-primary hover:text-primary">
+                                            Listen & Read
+                                        </a>
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
